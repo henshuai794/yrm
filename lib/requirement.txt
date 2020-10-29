@@ -1,0 +1,11 @@
+# 项目依赖第三方库
+pip install -U selenium
+pip install -U requests
+pip install -U opencv-python
+pip install -U pyautogui
+pip install -U pytest
+pip install -U pytest-rerunfailures
+pip install -U PYYAML
+pip install allure-pytest
+pip install Appium-Python-Client
+

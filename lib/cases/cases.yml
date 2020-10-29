@@ -1,0 +1,153 @@
+# 电商项目用例
+
+loginError :
+  -
+    title : 登录失败
+    cases :
+      -
+        name : 打开Chrome浏览器
+        method : openbrowser
+
+      -
+        name : 打开登录页
+        method : geturl
+        url : http://testingedu.com.cn:8000/index.php/Home/user/login.html
+
+      -
+        name : 输入用户名
+        method : input
+        locator : xpath=//*[@id="username"]
+        value : 13800138006
+
+      -
+        name : 输入密码
+        method : input
+        locator : xpath=//*[@id="password"]
+        value : 1234561
+
+      -
+        name : 输入验证码
+        method : input
+        locator : xpath=//*[@id="verify_code"]
+        value : 111111
+
+      -
+        name : 点击登录
+        method : click
+        locator : xpath=//*[@id="loginform"]/div/div[6]/a
+
+      -
+        name : 获取提示
+        method : gettext
+        locator : xpath=//*[@id="layui-layer1"]/div[2]
+
+      -
+        name : 断言登录失败
+        method : assertequal
+        params1 : '{text}'
+        params2 : '密码错误!'
+
+  -
+    title : 登录成功
+    cases :
+      -
+        name : 打开登录页
+        method : geturl
+        url : http://testingedu.com.cn:8000/index.php/Home/user/login.html
+
+      -
+        name : 输入用户名
+        method : input
+        locator : xpath=//*[@id="username"]
+        value : 13800138006
+
+      -
+        name : 输入密码
+        method : input
+        locator : xpath=//*[@id="password"]
+        value : 123456
+
+      -
+        name : 输入验证码
+        method : input
+        locator : xpath=//*[@id="verify_code"]
+        value : 111111
+
+      -
+        name : 点击登录
+        method : click
+        locator : xpath=//*[@id="loginform"]/div/div[6]/a
+        value : aaaa
+
+searchPage :
+  -
+    title : 搜索手机
+    cases :
+      -
+        name : 登录页搜索
+        method : geturl
+        url : http://testingedu.com.cn:8000/index.php/Home/user/index.html
+
+      -
+        name: 输入手机
+        method: input
+        locator : xpath=//*[@id="q"]
+        text : 手机
+
+      -
+        name: 点击搜索
+        method: click
+        locator : xpath=//*[@id="sourch_form"]/a
+
+      -
+        name: 获取title
+        method: gettitle
+
+testQQVerify :
+  -
+    title : 腾讯验证码识别
+    cases :
+      -
+        name: 进入登录中心
+        method: geturl
+        url: https://i.qq.com
+
+      -
+        name: 进入login_frame
+        method: intoiframe
+        locator: xpath=//*[@id="login_frame"]
+
+      -
+        name: 点击账号登录
+        method: click
+        locator: xpath=//*[@id="switcher_plogin"]
+
+      -
+        name: 输入用户名
+        method: input
+        locator: xpath=//*[@id="u"]
+        value : 233432143
+
+      -
+        name: 输入密码
+        method: input
+        locator: xpath=//*[@id="p"]
+        value: ewrewqrds
+
+      -
+        name: 点击登录
+        method: click
+        locator: xpath=//*[@id="login_button"]
+
+      -
+        name : 进入验证码iframe
+        method : intoiframe
+        locator : xpath=//*[@id="tcaptcha_iframe"]
+
+      -
+        name: 滑动验证码破解
+        method: slideverify
+        locator1: //*[@id="slideBg"]
+        locator2: //*[@id="slideBlock"]
+        jsonp : '{"offset-x":22,"refresh":"//*[@id=\"e_reload\"]"}'
+

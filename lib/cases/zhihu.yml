@@ -1,0 +1,32 @@
+# 知乎接口项目
+
+知乎:
+  - title: 知乎登录跳过验证码
+    cases:
+      - name: 添加知乎自定义的版本参数
+        method: addheader
+        key: x-zse-83
+        value: '3_2.0'
+
+      - name: 获取udid
+        method: post
+        url: https://www.zhihu.com/udid
+
+      - name: 获取是否需要验证码
+        method: get
+        position1: https://www.zhihu.com/api/v3/oauth/captcha?lang=cn
+
+      - name: 登录
+        method: postnodata
+        url: https://www.zhihu.com/api/v3/oauth/sign_in
+        data: KgxBgrN0cT2pkLfBxuomgDg9kLtxcTYhEqYqk4RG6Cx9xqYq8LnmD9eBDqpmkLF0zeSmF9_GigN_jbkGGG39k4U0g8XxcTYhWqYqk4QMQ93VivgMzUxG-bS0gLOfkComBvgBgUgqkLnm2LfBhhVG-gcVJ9oVSTYhXCx924QBEwN9STYhEqYhUhe8euofFBF0z7FqrLL8nvSfDUp9BLPBkCeG2qofQBF0z_VBE9R1UCSLQ_Yq8LkBEqXGEwOVsgX9BLfBJJHmkCOOcBF0z8xqoi98Q_SxbRY0TqYBb4uBS0tfoHY810xyFqrqUhNY6LOBzu2qNvu92LkYkCpGZbSBDggqkLPfgG3ZsUO1iugZJvOfXqYhzqNMcCeMST2tQMYqKMtykeU06H2pr_e0zRVmUbcMgcS_eBF0z_NM-ccM2wNOXqYhzuVKeCpGEwxO3BF0zRF0gDUqr02YrXNqzgY827XyNqFp6XY8M828oQLBFqYfXqYhygSVe9LBDrOf
+
+  - title: 个人中心
+    cases:
+      - name: 获取个人信息
+        method: get
+        url: https://www.zhihu.com/api/v4/me?include=can_rename%2Cverify_apply
+
+      - name: 获取私信
+        method: get
+        url: https://www.zhihu.com/api/v4/inbox

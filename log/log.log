@@ -1,0 +1,19 @@
+2020-08-24 21:16:46,147 - INFO - {'name': '添加知乎自定义的版本参数', 'method': 'addheader', 'key': 'x-zse-83', 'value': '3_2.0'}
+2020-08-24 21:16:46,148 - INFO - {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'content-type': 'application/x-www-form-urlencoded', 'x-zse-83': '3_2.0'}
+2020-08-24 21:16:46,150 - INFO - {'name': '获取udid', 'method': 'post', 'url': 'https://www.zhihu.com/udid'}
+2020-08-24 21:16:46,303 - ERROR - Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "E:\software\Python\VipWebFrame06\keywords\interKeys.py", line 125, in post
+    self.jsonres = json.loads(resulttext)
+  File "D:\drozer\Python3\lib\json\__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "D:\drozer\Python3\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "D:\drozer\Python3\lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2020-08-24 21:16:46,306 - INFO - {'name': '获取是否需要验证码', 'method': 'get', 'position1': 'https://www.zhihu.com/api/v3/oauth/captcha?lang=cn'}
+2020-08-24 21:16:46,396 - INFO - {'name': '登录', 'method': 'postnodata', 'url': 'https://www.zhihu.com/api/v3/oauth/sign_in', 'data': 'KgxBgrN0cT2pkLfBxuomgDg9kLtxcTYhEqYqk4RG6Cx9xqYq8LnmD9eBDqpmkLF0zeSmF9_GigN_jbkGGG39k4U0g8XxcTYhWqYqk4QMQ93VivgMzUxG-bS0gLOfkComBvgBgUgqkLnm2LfBhhVG-gcVJ9oVSTYhXCx924QBEwN9STYhEqYhUhe8euofFBF0z7FqrLL8nvSfDUp9BLPBkCeG2qofQBF0z_VBE9R1UCSLQ_Yq8LkBEqXGEwOVsgX9BLfBJJHmkCOOcBF0z8xqoi98Q_SxbRY0TqYBb4uBS0tfoHY810xyFqrqUhNY6LOBzu2qNvu92LkYkCpGZbSBDggqkLPfgG3ZsUO1iugZJvOfXqYhzqNMcCeMST2tQMYqKMtykeU06H2pr_e0zRVmUbcMgcS_eBF0z_NM-ccM2wNOXqYhzuVKeCpGEwxO3BF0zRF0gDUqr02YrXNqzgY827XyNqFp6XY8M828oQLBFqYfXqYhygSVe9LBDrOf'}
+2020-08-24 21:16:46,804 - INFO - {'user_id': 656052022336425984, 'uid': '8e4d13785dee2f1dde7595925b87170f', 'access_token': '2.1nPtYAgAAAAAAcFNL9zrIESYAAABgAlVNvgsxYABCdizjZwYDdEs-hDJaKiBTesr-DQ', 'expires_in': 15552000, 'token_type': 'bearer', 'cookie': {'q_c0': '2|1:0|10:1598275006|4:q_c0|92:Mi4xblB0WUFnQUFBQUFBY0ZOTDl6cklFU1lBQUFCZ0FsVk52Z3N4WUFCQ2Rpempad1lEZEVzLWhESmFLaUJUZXNyLURR|8e79da747ad6d9d15dd2ceadb42ff4ef800f46e8d82e95165bf4e666d93ae7a8', 'z_c0': '2|1:0|10:1598275006|4:z_c0|92:Mi4xblB0WUFnQUFBQUFBY0ZOTDl6cklFU1lBQUFCZ0FsVk52Z3N4WUFCQ2Rpempad1lEZEVzLWhESmFLaUJUZXNyLURR|060b91488a206519ea858eb031edc430aea0f5f8cc2d8e055a8d9eed402949da'}, 'refresh_token': '2.12c6e530260d8ed7c7c366e1e'}
+2020-08-24 21:16:46,814 - INFO - {'name': '获取个人信息', 'method': 'get', 'url': 'https://www.zhihu.com/api/v4/me?include=can_rename%2Cverify_apply'}
+2020-08-24 21:16:46,909 - INFO - {'name': '获取私信', 'method': 'get', 'url': 'https://www.zhihu.com/api/v4/inbox'}
